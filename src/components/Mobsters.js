@@ -26,7 +26,7 @@ const SortableItem = SortableElement((item) => (
 
 const SortableList = SortableContainer(({items}) => (
     <div style={{
-        height: '70vh',
+        height: '465px',
         maxWidth: '500px',
         overflow: 'auto',
         backgroundColor: '#f3f3f3',
