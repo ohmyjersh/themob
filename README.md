@@ -1,2 +1,2 @@
-themob - mob programming timer and organizer.
-https://ohmyjersh.github.io/themob/
+themob - mob programming timer and organizer. <br />
+[DEMO themob](https://ohmyjersh.github.io/themob/)
