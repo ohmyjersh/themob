@@ -4,7 +4,7 @@ import Timer from '../components/Timer';
 import TimerToolbar from '../components/TimerToolbar';
 import Mobsters from '../components/Mobsters';
 import {connect} from 'react-redux';
-import * as actions from '../reducers';
+import {actionCreators as actions} from '../reducers';
 import {Card, Row, Col } from 'antd';
 
 const Title = () => {
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
         addMobster: bindActionCreators(actions.addMobster, dispatch),
         updateOrder: bindActionCreators(actions.updateOrder, dispatch),
         switchNext: bindActionCreators(actions.switchNext, dispatch),
-        updateState: bindActionCreators(actions.updateStateAction, dispatch)
+        updateState: bindActionCreators(actions.updateState, dispatch)
       }
     }
 };

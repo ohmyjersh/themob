@@ -54,29 +54,9 @@ export default function(state = initialState(), action) {
   }
 }
 
-export function updateStateAction(update) {
-  return {
-    type: UPDATE_STATE,
-    update
-  }
-}
-
-export function addMobster(text) {
-  return {
-    type: ADD_MOBSTER,
-    text
-  };
-}
-
-export function updateOrder(mobsters) {
-  return {
-    type: UPDATE_ORDER,
-    mobsters
-  };
-}
-
-export function switchNext() {
-  return {
-    type: SWITCH_NEXT
-  }
+export const actionCreators = {
+  updateState: (update) => ({ type: UPDATE_STATE, update }),
+  addMobster: (text) => ({ type: ADD_MOBSTER, text }),
+  updateOrder: (mobsters) => ({ type: UPDATE_ORDER, mobsters }),
+  switchNext: () => ({ type: SWITCH_NEXT })
 }
