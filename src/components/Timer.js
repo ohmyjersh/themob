@@ -49,7 +49,6 @@ export default class Timer extends Component {
     render() {
     let timer = this.props.state.isPlaying && !this.props.state.isSwitching
                 ? <ReactCountdownClock 
-                    style={styles.countdown}
                     seconds={this.props.state.setting.mobDuration * 60}
                      color="black"
                      alpha={0.9}
@@ -57,7 +56,6 @@ export default class Timer extends Component {
                     onComplete={this.onFinish} /> 
                 : this.props.state.isSwitching && !this.props.state.isPlaying
                 ? <ReactCountdownClock 
-                     style={styles.countdown}
                      seconds={this.props.state.setting.waitDuration}
                      color="black"
                      alpha={0.9}
@@ -71,7 +69,7 @@ export default class Timer extends Component {
                 : 'red';
 
     return (
-    <Card style={{background:backgroundColor, height: '465px'}}>
+    <Card style={{background:backgroundColor, height: '465px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             {!this.props.state.isPlaying && !this.props.state.isSwitching ? <button style={{
                 backgroundColor: 'Transparent',
                 backgroundRepeat:'no-repeat',
@@ -85,21 +83,5 @@ export default class Timer extends Component {
             {timer}
          </Card>
         );
-    }
-}
-// when the timer revs up a version, add in the pausing.
-//  paused={true}
-//  pausedText='▐▐'
-
-const styles = {
-    countdown: {
-        padding: 0,
-        margin: 'auto',
-        display: 'block',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0
     }
 }
