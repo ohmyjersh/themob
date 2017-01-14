@@ -4,16 +4,16 @@ const SWITCH_NEXT = 'SWITCH_NEXT';
 const UPDATE_STATE = 'UPDATE_STATE';
 
 
-function addMobsterReducer(state, text) {
+function addMobster(state, text) {
   var newMobsters = state.mobsters.concat(text);
   return Object.assign({}, state, {mobsters: newMobsters});
 }
 
-function updateOrderReducer(state, mobsters) {
+function updateOrder(state, mobsters) {
   return Object.assign({}, state, {mobsters: mobsters})
 }
 
-function switchNextReducer(state) {
+function switchNext(state) {
   state.mobsters.push(state.mobsters.shift());
   return Object.assign({}, state, {mobsters: state.mobsters});
 }
@@ -40,15 +40,13 @@ function initialState(){
 export default function(state = initialState(), action) {
   switch (action.type) {
     case ADD_MOBSTER:
-      return addMobsterReducer(state, action.text);
+      return addMobster(state, action.text);
     case UPDATE_ORDER:
-      return updateOrderReducer(state, action.mobsters);
-    case SWITCH_NEXT: {
-      return switchNextReducer(state);
-    }
-    case UPDATE_STATE: {
+      return updateOrder(state, action.mobsters);
+    case SWITCH_NEXT:
+      return switchNext(state);
+    case UPDATE_STATE:
       return updateState(state, action.update);
-    }
       default:
         return state;
   }
