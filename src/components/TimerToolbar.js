@@ -61,10 +61,10 @@ render() {
                     onOk={this.handleOk} onCancel={this.handleCancel}
                     okText="OK" cancelText="Cancel"
                     >
-    <div style={{ marginBottom: 16, marginTop:16}}><Input placeholder="Mob Duration (Minutes)" value={this.props.state.setting.mobDuration} onChange={(e) => this.onMobDurationChange(e.target.value)} /></div>
-                        <div style={{ marginBottom: 16 }}><Input placeholder="Wait Period (Seconds)" value={this.props.state.setting.waitDuration} onChange={(e) => this.onWaitDurationChange(e.target.value)}/></div>
+                        <div style={{ marginBottom: 16, marginTop:16}}><label>Mob Duration (Minutes)</label><Input placeholder="Mob Duration (Minutes)" value={this.props.state.setting.mobDuration} onChange={(e) => this.onMobDurationChange(e.target.value)} /></div>
+                        <div style={{ marginBottom: 16 }}><label>Wait Period (Seconds)</label><Input placeholder="Wait Period (Seconds)" value={this.props.state.setting.waitDuration} onChange={(e) => this.onWaitDurationChange(e.target.value)}/></div>
                         <div style={{ marginBottom: 16 }}><Checkbox value={this.props.state.setting.checked} onChange={this.onCheck}>Save settings to local storage</Checkbox></div>
-                    </Modal>
+            </Modal>
             </div>
         )
     }
